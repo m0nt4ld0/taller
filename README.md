@@ -32,6 +32,15 @@ El siguiente ejemplo descarga todos los juegos de Sega Genesis en una carpeta de
 ```
 .\bajarjuegos.ps1 -consola "megadrive" -pagina 1
 ```
+![image](https://github.com/user-attachments/assets/2959286e-a759-4c3e-82f5-db73ab30c7b3)
+
+El script descargaría todos los juegos que se encuentran en la primera página:
+
+![image](https://github.com/user-attachments/assets/53a5d641-8314-4d56-9130-580a755f33ed)
+
+Busco los archivos en la carpeta Descargas:
+
+![image](https://github.com/user-attachments/assets/7242d490-aef9-4a81-9c39-e153adbb5c13)
 
 En este apartado se encuentra el listado con los códigos de consolas que puede recibir el parámetro ```-consola```
 
