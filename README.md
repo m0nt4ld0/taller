@@ -90,3 +90,21 @@ En este apartado se encuentra el listado con los códigos de consolas que puede 
 |wonderswan|Bandai Wonderswan|
 |virtual-boy|Nintendo Virtual Boy|
 |3do|3DO Interactive Multiplayer|
+
+## Archivo por lotes de Windows - Cambiar versiones de Java 💻🔧
+Este .bat permite intercambiar la versión actual de Java en el sistema de forma global y automática.
+
+⚠ El archivo cambia la variable de entorno JAVA_HOME en el sistema de forma global. Asegúrate de modificar las rutas donde se encuentran tus versiones de Java. Si no lo haces, el archivo no funcionará.
+
+⚠ Asegúrate de ejecutarlo con permisos de administrador.
+
+⚠ Es posible que si tienes otra versión configurada en tus variables de entorno, la herramienta no funcione correctamente. En ese caso, puedes eliminar la variable de entorno JAVA_HOME y volver a ejecutar el archivo.
+
+### Modo de uso
+1. Copia el archivo .bat a una carpeta de tu PC.
+2. Abre la consola de comandos y ejecuta el archivo "cambiarVersionJava.bat".
+3. Selecciona la versión de Java que deseas instalar.
+4. El archivo cambia la variable de entorno JAVA_HOME en el sistema de forma global.
+5. Se instala la nueva versión de Java en el sistema. ¡Todo listo!
+6. Para verificar el cambio, una vez que se haya ejecutado el archivo .bat, abre otra consola de comandos y ejecuta el comando "java -version", o ejecuta el script nuevamente (ya que indica cuál es tu versión de Java activada al inicio).
+7. Si deseas cambiar de nuevo la versión de Java, simplemente vuelve a ejecutar el archivo .bat.
