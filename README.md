@@ -108,3 +108,15 @@ Este .bat permite intercambiar la versión actual de Java en el sistema de forma
 5. Se instala la nueva versión de Java en el sistema. ¡Todo listo!
 6. Para verificar el cambio, una vez que se haya ejecutado el archivo .bat, abre otra consola de comandos y ejecuta el comando "java -version", o ejecuta el script nuevamente (ya que indica cuál es tu versión de Java activada al inicio).
 7. Si deseas cambiar de nuevo la versión de Java, simplemente vuelve a ejecutar el archivo .bat.
+
+## Archivo por lotes de Windows - Ver todas las redes Wi-Fi guardadas y su contraseña 💻
+Con este .bat podemos ver las contraseñas de todas las redes Wi-Fi almacenadas en el equipo.
+
+⚠ Solamente funcionará si lo ejecutamos con privilegios de <b>Administrador</b>.
+
+Simplemente hacemos clic con el botón derecho en el archivo .bat y seleccionamos "Ejecutar como Administrador". Nos va a devolver algo como lo siguiente:
+
+![redes-wifi](https://github.com/user-attachments/assets/acbd8211-8c06-4092-845c-4699f16aeaa9)
+
+Para cerrar la ventana, presionamos cualquier tecla.
+
