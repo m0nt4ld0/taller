@@ -23,7 +23,7 @@ Esta macro de Visual Basic for Applications (VBA) automatiza la creación de un 
 ├── 20240803/
 └── 20240807/
 ```
-## Powershell - Descargar ROMs para emuladores de juego 🕹️
+## Powershell/Bash - Descargar ROMs para emuladores de juego 🕹️
 📼 [Miralo funcionando ahora en YouTube](https://www.youtube.com/watch?v=XXfHq_7UUeE)
 
 El script permite descargar de forma masiva desde Retrostic todas las ROMs disponibles para la consola que se pase como parámetro, en la página que se pase como parámetro.
@@ -90,6 +90,21 @@ En este apartado se encuentra el listado con los códigos de consolas que puede 
 |wonderswan|Bandai Wonderswan|
 |virtual-boy|Nintendo Virtual Boy|
 |3do|3DO Interactive Multiplayer|
+
+### Versión del script para Linux (Bash) 🐧
+Si usás un sistema Linux, podés descargar el archivo bajarjuegos.sh
+Siguiendo el ejemplo que descarga todos los juegos de Sega Genesis en una carpeta de nombre "megadrive", para poder ejecutarlo en Linux, primero deberías descargarte el archivo y darle permisos de ejecución.
+Suponiendo que almacenamos bajarjuegos.sh en la carpeta de Descargas de nuestro home:
+
+```
+$ chmod +x ~/Descargas/bajarjuegos.sh 
+```
+
+Luego ya podemos correrlo:
+
+```
+~/Descargas/bajarjuegos.sh -consola "megadrive" -pagina 1
+```
 
 ## Archivo por lotes de Windows - Cambiar versiones de Java 💻🔧
 Este .bat permite intercambiar la versión actual de Java en el sistema de forma global y automática.
