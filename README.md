@@ -135,3 +135,19 @@ Simplemente hacemos clic con el botón derecho en el archivo .bat y seleccionamo
 
 Para cerrar la ventana, presionamos cualquier tecla.
 
+## Linux (Bash) - Obtener todos los enlaces magnet de una página web 🧲
+Lista en pantalla todos los enlaces magnet presentes en una página web, e informa la cantidad de resultados encontrados.
+
+⚠ Para poder ejecutarlo, recordar que es necesario primero darle permisos de ejecución.
+
+```
+$ chmod +x ~/Descargas/getMagnetLinks.sh 
+```
+
+Luego ya podemos correrlo:
+
+```
+$ ./getMagnetLinks.sh https://linuxmint.com/edition.php?id=319
+```
+
+![image](https://github.com/user-attachments/assets/58b61e02-2207-46c0-b189-657ca13a2147)
