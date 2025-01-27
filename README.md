@@ -151,3 +151,21 @@ $ ./getMagnetLinks.sh https://linuxmint.com/edition.php?id=319
 ```
 
 ![image](https://github.com/user-attachments/assets/58b61e02-2207-46c0-b189-657ca13a2147)
+
+
+## Linux (Bash) - Obtener todos los enlaces a archivos .torrent de una página web 🧲
+Similar al script anterior, lista en pantalla todos los enlaces a archivos .torrent presentes en una página web, e informa la cantidad de resultados encontrados.
+
+⚠ Para poder ejecutarlo, recordar que es necesario primero darle permisos de ejecución.
+
+```
+$ chmod +x ~/Descargas/getTorrentsLinks.sh 
+```
+
+Luego ya podemos correrlo:
+
+```
+$ ./getTorrentsLinks.sh https://www18.dontorrent.link/serie/42511/42512/This-is-Us-1-Temporada
+```
+
+![image](https://github.com/user-attachments/assets/c6dfbe8a-1a37-41a6-bca0-c770658bdf84)
