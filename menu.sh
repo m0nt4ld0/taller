@@ -18,9 +18,9 @@ echo "github.com/m0nt4ld0"
 
 while true; do
     echo ""
-    echo "1) Ejecutar getMagnetLinks.sh"
-    echo "2) Ejecutar bajarjuegos.sh"
-    echo "3) Ejecutar getTorrentsLinks.sh"
+    echo "1) Detectar enlaces magnet en una pagina web"
+    echo "2) Detectar archivos .torrent en una pagina web"
+    echo "3) Bajar Juegos de Retrostic.com"
     echo "0) Salir"
     echo -n "Seleccione una opción: "
     read -r opcion
