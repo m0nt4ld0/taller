@@ -42,7 +42,9 @@ while true; do
             echo "Ingrese la consola seguida por un espacio y el número de página para bajar juegos de Retrostic: "
             read -r consola pagina
             echo "Descargando juegos para la consola $consola en la página $pagina..."
-            bash "$SCRIPT_DIR/Linux/bajarjuegos.sh" "$consola" "$pagina"
+            SCRIPT_DIR="$(dirname "$(realpath "$0")")"
+            PYTHON_SCRIPT="$SCRIPT_DIR/Linux/bajarjuegos.py"
+            python3 "$PYTHON_SCRIPT" "$consola" "$pagina"
             ;;
         0)
             echo "¡Hasta pronto!"
