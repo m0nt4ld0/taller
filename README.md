@@ -169,3 +169,45 @@ $ ./getTorrentsLinks.sh https://www18.dontorrent.link/serie/42511/42512/This-is-
 ```
 
 ![image](https://github.com/user-attachments/assets/c6dfbe8a-1a37-41a6-bca0-c770658bdf84)
+
+## Linux (Bash) - Desplegar aplicación con Maven y Spring Boot en contenedor Docker
+Este script permite desplegar una aplicación hecha con Spring Boot en un contenedor Docker remoto (por ejemplo, en un servidor casero). 
+
+⚠️ **Requisitos previos**:
+- Tener instalado **Maven** y **Java 21** en el equipo local.
+- Contar con permisos SSH y credenciales válidas en el equipo remoto.
+- Haber otorgado permisos de ejecución al script: `chmod +x deploy_java.sh`.
+
+Si ya existe un contenedor con el mismo nombre, el script:
+1. Lo detiene y elimina automáticamente.
+2. Sube el nuevo JAR al servidor.
+3. Ejecuta el contenedor nuevamente con la versión actualizada.
+---
+
+### 📥 Parámetros del script
+
+|Parámetro|Descripción|Valor de ejemplo|
+|------|-------|-------|
+|PROJECT_DIR|Directorio donde almacenamos el proyecto|/home/mmontaldo/miproyecto/|
+|JAR_NAME|Nombre del JAR|miproyecto-0.0.1-SNAPSHOT.jar|
+|REMOTE_USER|Usuario del equipo remoto (Docker)|mmontaldo|
+|REMOTE_HOST|IP del Host remoto (Docker)|192.168.0.8|
+|REMOTE_DIR|Directorio donde vamos a copiar el JAR|/miapp/|
+|REMOTE_PORT|Puerto en el cual se va a exponer la aplicación|5000|
+|CONTAINER_NAME|Nombre que tendrá el contenedor Docker|miapp|
+|SPRING_PROFILE|Profile de Spring Boot con el cual vamos a ejecutar la aplicación (dev, test, prod), útil para desplegar en cualquiera de los ambientes|dev|
+
+---
+
+### 🧪 Ejemplo de uso
+
+```bash
+bash deploy_java.sh \
+  /home/mmontaldo/miproyecto \
+  miproyecto-0.0.1-SNAPSHOT.jar \
+  mmontaldo \
+  192.168.0.8 \
+  /miapp \
+  5000 \
+  miapp \
+  dev
