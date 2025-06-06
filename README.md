@@ -211,3 +211,16 @@ bash deploy_java.sh \
   5000 \
   miapp \
   dev
+```
+
+## Linux (Bash) - Convertir imágenes JPG/PNG a WebP 📸➡️🕸️
+Este script permite convertir todas las imágenes ```.jpg```, ```.jpeg``` y ```.png``` ubicadas dentro de la carpeta ```public/images/``` de tu proyecto a formato .webp, que ofrece mejor compresión sin perder calidad visible.
+
+Es especialmente útil para proyectos web donde optimizar el peso de las imágenes mejora el rendimiento y la experiencia del usuario.
+
+# 📦 Requisitos
+Debe estar instalado el paquete ```webp```, que incluye la herramienta ```cwebp```:
+
+```bash
+sudo apt install webp
+```
