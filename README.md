@@ -211,3 +211,34 @@ bash deploy_java.sh \
   5000 \
   miapp \
   dev
+```
+
+
+## Linux (Bash) - Desplegar imágenes desde JSON (local o de Internet)
+Este script lo uso para descargar las miniaturas de Retro Achievements en mi proyecto de Talento Games.
+
+Aquí se puede ver el script en funcionamiento, copiando las imágenes en la carpeta /public/images/icons/consoles del proyecto:
+![downloadIcons](https://github.com/user-attachments/assets/8acadc38-ab8c-47f9-83cc-e2b5d2cdfad8)
+
+
+⚠️ **Requisitos previos**:
+- Tener instalado jq
+- Tener instalado curl
+- Darle permisos de ejecución al script chmod +x
+
+### 📥 Parámetros del script
+```bash
+./downloadIcons.sh https://retroachievements.org/API/API_GetConsoleIDs.php?y=MIAPIKEY ~/Documentos/Desarrollo/respawn-party/public/images/icons/consoles
+```
+
+|Parámetro|Descripción|Valor de ejemplo|
+|------|-------|-------|
+|Ubicacion_JSON|Ubicación del archivo JSON (puede ser localmente o una URL)|https://retroachievements.org/API/API_GetConsoleIDs.php?y=MIAPIKEY|
+|Directorio_Destino|Directorio donde se van a almacenar las imágenes. En mi caso, crea el directorio consoles dentro de mi proyecto web.|
+
+### 🧪 Ejemplo de uso
+```bash
+$ ./downloadIcons.sh https://retroachievements.org/API/API_GetConsoleIDs.php?y=MI_APKIKEY ~/Documentos/Desarrollo-2/respawn-party/public/images/icons/consoles
+$ ./descargar_icons.sh https://tuapi.com/consoles.json ./icons
+$ ./descargar_icons.sh file://$(pwd)/consoles.json ./icons # Archivo almacenado localmente
+```
