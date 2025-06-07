@@ -34,9 +34,10 @@ jq -c '.[]' "$TMP_JSON" | while read -r console; do
   icon_url=$(echo "$console" | jq -r '.IconURL')
 
   if [[ -n "$name" && "$icon_url" != "null" ]]; then
-    filename="${DEST_DIR}/${name}.png"
+    filename=$(basename "$(echo "$console" | jq -r '.IconURL')")
+    filepath="${DEST_DIR}/${filename}"
     echo "Descargando ${name}..."
-    curl -s "$icon_url" -o "$filename"
+    curl -s "$icon_url" -o "$filepath"
   fi
 done
 
