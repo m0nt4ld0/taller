@@ -1,6 +1,19 @@
 # Mi taller 👩‍💻🔨
 Proyecto misceláneo que reúne soluciones "fatto in casa" para automatizar/resolver mis problemas cotidianos (scripts que hacen la creación de carpetas de a lotes para organizar fotos o apuntes, tareas de mantenimiento de mis equipos, etc).
 
+## 📚 Tabla de Contenidos
+
+- [Macro VBA - Crear árbol de carpetas por materia, con fechas de clases 📚👩‍🏫](#macro-vba---crear-árbol-de-carpetas-por-materia-con-fechas-de-clases-)
+- [Powershell/Bash - Descargar ROMs para emuladores de juego 🕹️](#powershellbash---descargar-roms-para-emuladores-de-juego)
+  - [Versión del script para Linux (Bash) 🐧](#versión-del-script-para-linux-bash-)
+- [Archivo por lotes de Windows - Cambiar versiones de Java 💻🔧](#archivo-por-lotes-de-windows---cambiar-versiones-de-java-)
+- [Archivo por lotes de Windows - Ver todas las redes Wi-Fi guardadas y su contraseña 💻](#archivo-por-lotes-de-windows---ver-todas-las-redes-wi-fi-guardadas-y-su-contraseña-)
+- [Linux (Bash) - Obtener todos los enlaces magnet de una página web 🧲](#linux-bash---obtener-todos-los-enlaces-magnet-de-una-página-web-)
+- [Linux (Bash) - Obtener todos los enlaces a archivos .torrent de una página web 🧲](#linux-bash---obtener-todos-los-enlaces-a-archivos-torrent-de-una-página-web-)
+- [Linux (Bash) - Desplegar aplicación con Maven y Spring Boot en contenedor Docker 🚀🐳](#linux-bash---desplegar-aplicación-con-maven-y-spring-boot-en-contenedor-docker)
+- [Linux (Bash) - Descargar imágenes desde JSON (local o de Internet) 🖼️](#linux-bash---descargar-imágenes-desde-json-local-o-de-internet-)
+- [Linux (Bash) - Convertir imágenes JPG/PNG a WebP 📸➡️🕸️](#linux-bash---convertir-imágenes-jpgpng-a-webp)
+
 ## Macro VBA - Crear árbol de carpetas por materia, con fechas de clases 📚👩‍🏫
 📼 [Miralo funcionando ahora en YouTube](https://www.youtube.com/watch?v=DcRMCIBKNqY)
 
@@ -23,7 +36,7 @@ Esta macro de Visual Basic for Applications (VBA) automatiza la creación de un 
 ├── 20240803/
 └── 20240807/
 ```
-## Powershell/Bash - Descargar ROMs para emuladores de juego 🕹️
+## Powershell/Bash - Descargar ROMs para emuladores de juego
 📼 [Miralo funcionando ahora en YouTube](https://www.youtube.com/watch?v=XXfHq_7UUeE)
 
 El script permite descargar de forma masiva desde Retrostic todas las ROMs disponibles para la consola que se pase como parámetro, en la página que se pase como parámetro.
@@ -213,8 +226,7 @@ bash deploy_java.sh \
   dev
 ```
 
-
-## Linux (Bash) - Desplegar imágenes desde JSON (local o de Internet)
+## Linux (Bash) - Descargar imágenes desde JSON (local o de Internet)
 Este script lo uso para descargar las miniaturas de Retro Achievements en mi proyecto de Talento Games.
 
 Aquí se puede ver el script en funcionamiento, copiando las imágenes en la carpeta /public/images/icons/consoles del proyecto:
@@ -241,4 +253,62 @@ Aquí se puede ver el script en funcionamiento, copiando las imágenes en la car
 $ ./downloadIcons.sh https://retroachievements.org/API/API_GetConsoleIDs.php?y=MI_APKIKEY ~/Documentos/Desarrollo-2/respawn-party/public/images/icons/consoles
 $ ./descargar_icons.sh https://tuapi.com/consoles.json ./icons
 $ ./descargar_icons.sh file://$(pwd)/consoles.json ./icons # Archivo almacenado localmente
+
+
+## Linux (Bash) - Convertir imágenes JPG/PNG a WebP
+Este script permite convertir todas las imágenes ```.jpg```, ```.jpeg``` y ```.png``` ubicadas dentro de la carpeta ```public/images/``` de tu proyecto a formato .webp, que ofrece mejor compresión sin perder calidad visible.
+
+Es especialmente útil para proyectos web donde optimizar el peso de las imágenes mejora el rendimiento y la experiencia del usuario.
+
+# 📦 Requisitos
+Debe estar instalado el paquete ```webp```, que incluye la herramienta ```cwebp```:
+
+```bash
+sudo apt install webp
 ```
+
+🛠️ Modo de uso
+Dale permisos de ejecución al script:
+
+```bash
+chmod +x convert2Webp.sh
+```
+
+Ejecutalo pasando como parámetro la ruta base del proyecto donde se encuentra la carpeta public/images:
+
+```bash
+./convert2Webp.sh ./ruta/a/tu/proyecto
+```
+
+📁 Por ejemplo, si la estructura es:
+
+```
+/mis-proyectos/
+└── mi-web/
+    └── public/
+        └── images/
+            ├── foto1.jpg
+            ├── foto2.png
+            └── fondo.jpeg
+```
+
+Entonces deberías ejecutar:
+
+```
+./convert2Webp.sh ./mis-proyectos/mi-web
+```
+
+🔁 El script convertirá automáticamente las imágenes encontradas y generará sus versiones .webp en el mismo directorio, manteniendo los originales.
+
+⚙️ Personalización
+El nivel de calidad de conversión está preconfigurado al 80%, pero podés modificarlo editando esta línea del script:
+
+```bash
+QUALITY=80
+```
+
+💡 Si querés que el script elimine las imágenes originales luego de convertirlas, podés agregar esta línea justo después del comando de conversión:
+
+```bash
+rm "$file"
+
